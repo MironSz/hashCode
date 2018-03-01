@@ -45,7 +45,7 @@ list<ride>::iterator ClosestChooser::chooseNextRideForCar(int carIdm, State& sta
             if(d+state.currentTime <= potentialRide->earliest_start)
                 bonus = true;
 
-            if(r+ (int)bonus*state.params.B - min(0,potentialRide->earliest_start-(state.currentTime+d))>= minn ) {
+            if(r+ (int)bonus*state.params.B - min(0,potentialRide->earliest_start-(state.currentTime+d))/4 >= minn ) {
                 minn = d;
                 who = potentialRide;
             }
