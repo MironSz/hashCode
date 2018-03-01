@@ -5,11 +5,8 @@
 
 using namespace std;
 
-parameters params;
-vector<ride> rides;
-
 int main() {
-    params = readParameters();
-    rides = readRides();
+    ride Ride;
+    std::cout << "Hello, Miron!" << std::endl;
     return 0;
 }
