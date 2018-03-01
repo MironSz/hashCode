@@ -24,8 +24,11 @@ void f(){
 
             state.completedRidesByCars[endedRide.second].push_back(nextRide->number);
             state.rideEndTime[endedRide.second] = state.currentTime + dist(currentPosition,nextRide->finishing_point); // ?startign point
+            pair<int, int> toUpdate(state.currentTime + dist(nextRide->finishing_point, nextRide->starting_point) + dist(nextRide->starting_point, state.rideEndCord[endedRide.second]), endedRide.second);
+
             state.rideEndCord[endedRide.second] = nextRide->finishing_point;
             state.allRides.erase(nextRide);
+            state.nextEndedRide.insert(toUpdate);
         }
 
     }
