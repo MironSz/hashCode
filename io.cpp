@@ -1,6 +1,6 @@
 #include <iostream>
 #include "io.h"
-
+#include <list>
 using namespace std;
 
 parameters readParameters() {
@@ -9,8 +9,8 @@ parameters readParameters() {
     return t;
 }
 
-std::vector<ride> readRides(long long N) {
-    vector<ride> rides;
+std::list<ride> readRides(long long N) {
+    list<ride> rides;
     for(int i=0; i<N; ++i) {
         ride n;
         for (int i = 0; i < N; ++i) {

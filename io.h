@@ -6,7 +6,7 @@
 #define HASHCODE_IO_H
 
 #include "structs.h"
-
+#include <list>
 struct parameters {
     long long R, C, F, N, B, T;
 };
@@ -14,7 +14,7 @@ struct parameters {
 
 
 parameters readParameters();
-std::vector<ride> readRides(long long N);
+std::list<ride> readRides(long long N);
 
 
 #endif //HASHCODE_IO_H

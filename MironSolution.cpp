@@ -27,6 +27,7 @@ void f(int r, int c, int f, int n, int b, int t){
         int nextRide = chooser.chooseNextRideForCar(endedRide.second, state);
 
         if(nextRide != -1){
+
             state.allFinishedRides[endedRide.second].push_back(make_pair(nextRide,state.currentTime));
 
             state.rideEndTime[endedRide.second] = state.currentTime + dist(currentPosition,state.allRides[nextRide].finishing_point); // ?startign point
