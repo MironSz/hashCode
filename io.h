@@ -14,7 +14,7 @@ struct parameters {
 
 
 parameters readParameters();
-std::vector<ride> readRides();
+std::vector<ride> readRides(long long N);
 
 
 #endif //HASHCODE_IO_H

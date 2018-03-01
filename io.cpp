@@ -9,7 +9,7 @@ parameters readParameters() {
     return t;
 }
 
-std::vector<ride> readRides(int N) {
+std::vector<ride> readRides(long long N) {
     vector<ride> rides;
     for(int i=0; i<N; ++i) {
         ride n;

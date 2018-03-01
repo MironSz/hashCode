@@ -6,9 +6,6 @@ using namespace std;
 
 Chooser chooser;
 
-
-
-
 void f(int r, int c, int f, int n, int b, int t){
     allFinishedRides.resize(N+1);
     for(int i=0; i <f ;i++){ //inicjajcja
