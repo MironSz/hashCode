@@ -10,7 +10,7 @@
 #include <vector>
 
 using position = std::pair<int,int>;
-using time = int;
+using kwant = int;
 
 struct ride {
     int number;
@@ -26,7 +26,7 @@ struct car {
     position current_position;
     std::vector<ride> realised_rides;
 
-    time make_ride(const ride&);
+    kwant make_ride(const ride&);
 };
 
 #endif //HASHCODE_STRUCTS_H
