@@ -6,7 +6,7 @@
 
 using namespace std;
 
-list<ride> :: const_iterator AvalibleChooser::chooseNextRideForCar(int carIdm, const State& state) {
+list<ride> :: iterator AvalibleChooser::chooseNextRideForCar(int carIdm, State& state) {
 
     for (auto  potentialRide = state.allRides.begin(); potentialRide != state.allRides.end(); potentialRide++) {
         if (dist(state.rideEndCord[carIdm], potentialRide->starting_point) + state.currentTime < state.params.T) {
