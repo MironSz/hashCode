@@ -9,7 +9,7 @@
 using namespace std;
 using position = pair<int,int>;
 using kwant = int;
-time currentTime;
+kwant currentTime;
 
 struct ride {
     int number;
@@ -21,20 +21,17 @@ struct ride {
     bool isTaken();
 };
 
-
 vector<vector<pair<int,kwant>>> allFinishedRides; //id drogi, czas rozpoczęcia
 vector<ride> allRides;   //wszystkie możliwe trasy
-vector<position> rideEndCord[2];  //gdzie samochód skończy
+vector<position> rideEndCord;  //gdzie samochód skończy
 vector<kwant> rideEndTime; //kiedy samochód skończy
-set<pair<kwant,int>> nextEndedRide;  //która trasa się skończy następna
+set<pair<kwant,int>> nextEndedRide;  //która samochód nastepny się skończy następna
 
 class Chooser{
     int chooseNextRideForCar(int carId){
-
+        return 1;
     }
 };
-
-
 
 struct car {
     position current_position;
