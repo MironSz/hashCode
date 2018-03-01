@@ -5,4 +5,28 @@
 #ifndef HASHCODE_STRUCTS_H
 #define HASHCODE_STRUCTS_H
 
+
+#include <utility>
+#include <vector>
+
+using position = std::pair<int,int>;
+using time = int;
+
+struct ride {
+    int number;
+    position starting_point;
+    position finishing_point;
+    int earliest_start;
+    int latest_finish;
+
+    bool isTaken();
+};
+
+struct car {
+    position current_position;
+    std::vector<ride> realised_rides;
+
+    time make_ride(const ride&);
+};
+
 #endif //HASHCODE_STRUCTS_H
