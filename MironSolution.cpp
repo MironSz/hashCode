@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Chooser chooser;
+AvalibleChooser chooser;
 State state;
 void f(int r, int c, int f, int n, int b, int t){
     state.allFinishedRides.resize(state.params.N+1);

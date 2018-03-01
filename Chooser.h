@@ -15,6 +15,8 @@ struct AvalibleChooser : public Chooser {
     int chooseNextRideForCar(int carIdm, const State& state);
 };
 
-
+struct NearestChooser : public Chooser {
+    int chooseNextRideForCar(int carIdm, const State& state);
+};
 
 #endif //HASHCODE_CHOOSER_H
