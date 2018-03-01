@@ -8,9 +8,12 @@
 #include "state.h"
 
 struct Chooser{
-    int chooseNextRideForCar(int carIdm, const State& state);
+    virtual int  chooseNextRideForCar(int carIdm, const State& state) = 0;
 };
 
+struct AvalibleChooser : public Chooser {
+    int chooseNextRideForCar(int carIdm, const State& state);
+};
 
 
 

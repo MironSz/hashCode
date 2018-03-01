@@ -5,6 +5,12 @@
 #include "Chooser.h"
 
 
-int Chooser::chooseNextRideForCar(int carId, const State& state) {
-    return 1;
+int AvalibleChooser::chooseNextRideForCar(int carIdm, const State& state) {
+
+    for (auto potentialRide: state.allRides) {
+        if (dist(state.rideEndCord, potentialRide.starting_point) + state.currentTime < state.params.T) {
+            return potentialRide.number;
+        }
+    }
+
 }

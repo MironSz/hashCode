@@ -20,6 +20,7 @@ std::list<ride> readRides(long long N) {
                 >> n.finishing_point.second
                 >> n.earliest_start
                 >> n.latest_finish;
+            n.number = i;
         }
         rides.push_back(n);
     }

@@ -19,14 +19,13 @@ struct ride {
     int earliest_start;
     int latest_finish;
 
-    bool isTaken();
+    bool isTaken;
 };
 
 struct car {
     position current_position;
     std::vector<ride> realised_rides;
 
-    kwant make_ride(const ride&);
 };
 
 #endif //HASHCODE_STRUCTS_H
