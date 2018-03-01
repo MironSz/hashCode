@@ -19,11 +19,15 @@ struct State {
     std::vector<kwant> rideEndTime; //kiedy samochód skończy
     std::set<std::pair<kwant,int>> nextEndedRide;  //która samochód nastepny się skończy następna
     parameters params;
+    kwant currentTime;
 
     explicit State() {
         params = readParameters();
-        allRides = readRides(params.N)
+        allRides = readRides(params.N);
     }
 };
+
+int dist(position a, position b);
+
 
 #endif //HASHCODE_STATE_H

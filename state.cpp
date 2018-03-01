@@ -1,6 +1,7 @@
-#ifndef STATE
-#define STATE
+#include "structs.h"
 
-//Funkje?
+using namespace std;
 
-#endif //STATE
+int dist(position a, position b){
+    return abs(a.first - b.first) + abs(a.second - b.second);
+}

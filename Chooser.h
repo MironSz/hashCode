@@ -7,8 +7,8 @@
 
 #include "state.h"
 
-class Chooser{
-    int chooseNextRideForCar(int carIdm const State& state);
+struct Chooser{
+    int chooseNextRideForCar(int carIdm, const State& state);
 };
 
 
