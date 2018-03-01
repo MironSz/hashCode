@@ -8,25 +8,25 @@
 
 using namespace std;
 using position = pair<int,int>;
-using time = int;
+using kwant = int;
 time currentTime;
 
 struct ride {
     int number;
     position starting_point;
     position finishing_point;
-    int earliest_start;
-    int latest_finish;
+    kwant earliest_start;
+    kwant latest_finish;
 
     bool isTaken();
 };
 
 
-vector<vector<pair<int,time>>> allFinishedRides; //id drogi, czas rozpoczęcia
+vector<vector<pair<int,kwant>>> allFinishedRides; //id drogi, czas rozpoczęcia
 vector<ride> allRides;   //wszystkie możliwe trasy
 vector<position> rideEndCord[2];  //gdzie samochód skończy
-vector<int> rideEndTime; //kiedy samochód skończy
-set<pair<time,int>> nextEndedRide;  //która trasa się skończy następna
+vector<kwant> rideEndTime; //kiedy samochód skończy
+set<pair<kwant,int>> nextEndedRide;  //która trasa się skończy następna
 
 class Chooser{
     int chooseNextRideForCar(int carId){
