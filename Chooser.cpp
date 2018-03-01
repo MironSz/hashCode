@@ -5,6 +5,6 @@
 #include "Chooser.h"
 
 
-int Chooser::chooseNextRideForCar(int carId, const State& state) {
-    return 1;
+list<ride>::iterator Chooser::chooseNextRideForCar(int carId, const State& state) {
+    state.allRides.begin();
 }

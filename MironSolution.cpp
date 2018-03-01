@@ -24,14 +24,14 @@ void f(int r, int c, int f, int n, int b, int t){
         state.nextEndedRide.erase(state.nextEndedRide.begin());
         state.currentTime = endedRide.first;
 
-        int nextRide = chooser.chooseNextRideForCar(endedRide.second, state);
+        auto nextRide = chooser.chooseNextRideForCar(endedRide.second, state);
 
-        if(nextRide != -1){
+        if(nextRide != state.allRides.end()){
 
-            state.allFinishedRides[endedRide.second].push_back(make_pair(nextRide,state.currentTime));
+            state.allFinishedRides[endedRide.second].push_back(make_pair(nextRide->number,state.currentTime));
 
-            state.rideEndTime[endedRide.second] = state.currentTime + dist(currentPosition,state.allRides[nextRide].finishing_point); // ?startign point
-            state.rideEndCord[endedRide.second] = state.allRides[nextRide].finishing_point;
+            state.rideEndTime[endedRide.second] = state.currentTime + dist(currentPosition,nextRide->finishing_point); // ?startign point
+            state.rideEndCord[endedRide.second] = nextRide->finishing_point;
         }
 
     }

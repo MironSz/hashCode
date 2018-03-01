@@ -6,9 +6,12 @@
 #define HASHCODE_CHOOSER_H
 
 #include "state.h"
+#include <list>
+using namespace std;
+
 
 struct Chooser{
-    int chooseNextRideForCar(int carIdm, const State& state);
+    list<ride> ::iterator chooseNextRideForCar(int carIdm, const State& state);
 };
 
 
