@@ -6,17 +6,20 @@
 #define HASHCODE_CHOOSER_H
 
 #include "state.h"
+#include <list>
+using namespace std;
+
 
 struct Chooser{
-    virtual int  chooseNextRideForCar(int carIdm, const State& state) = 0;
+    virtual list<ride> ::const_iterator chooseNextRideForCar(int carIdm, const State& state) = 0;
 };
 
 struct AvalibleChooser : public Chooser {
-    int chooseNextRideForCar(int carIdm, const State& state);
+    list<ride> ::const_iterator chooseNextRideForCar(int carIdm, const State& state);
 };
 
 struct NearestChooser : public Chooser {
-    int chooseNextRideForCar(int carIdm, const State& state);
+    list<ride> ::const_iterator chooseNextRideForCar(int carIdm, const State& state);
 };
 
 #endif //HASHCODE_CHOOSER_H

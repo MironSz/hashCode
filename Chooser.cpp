@@ -6,24 +6,12 @@
 
 using namespace std;
 
-int AvalibleChooser::chooseNextRideForCar(int carIdm, const State& state) {
+list<ride> :: const_iterator AvalibleChooser::chooseNextRideForCar(int carIdm, const State& state) {
 
-    for (auto potentialRide: state.allRides) {
-        if (dist(state.rideEndCord[carIdm], potentialRide.starting_point) + state.currentTime < state.params.T) {
-            return potentialRide.number;
+    for (auto  potentialRide = state.allRides.begin(); potentialRide != state.allRides.end(); potentialRide++) {
+        if (dist(state.rideEndCord[carIdm], potentialRide->starting_point) + state.currentTime < state.params.T) {
+            return potentialRide;
         }
     }
 
-}
-
-int NearestChooser::chooseNextRideForCar(int carIdm, const State& state) {
-    long long minn = state.params.R + state.params.C;
-    int witch = -1;
-    int curr;
-    for (auto potentialRide: state.allRides) {
-        curr = dist(state.rideEndCord[carIdm], potentialRide.starting_point);
-        if (curr + state.currentTime < state.params.T) {
-            minn = min(minn, curr);
-        }
-    }
 }
