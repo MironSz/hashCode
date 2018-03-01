@@ -4,7 +4,6 @@
 #include "io.h"
 
 using namespace std;
-std::ios::sync_with_stdio(false);
 
 int countPoints(parameters &t, std::list<ride> &ridesl) {
     vector<ride> rides{ridesl.begin(), ridesl.end()};
