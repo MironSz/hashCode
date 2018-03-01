@@ -28,10 +28,13 @@ vector<position> rideEndCord[2];  //gdzie samochód skończy
 vector<int> rideEndTime; //kiedy samochód skończy
 set<pair<time,int>> nextEndedRide;  //która trasa się skończy następna
 
+class Chooser{
+    int chooseNextRideForCar(int carId){
 
-int chooseNextRideForCar(int carId){
+    }
+};
 
-}
+
 
 struct car {
     position current_position;
