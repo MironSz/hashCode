@@ -7,7 +7,8 @@ using namespace std;
 
 
 void f(){
-    AvalibleChooser chooser;
+    //AvalibleChooser chooser;
+    NearestChooser chooser;
     State state;
 
 

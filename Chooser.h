@@ -11,15 +11,15 @@ using namespace std;
 
 
 struct Chooser{
-    virtual list<ride> ::const_iterator chooseNextRideForCar(int carIdm, const State& state) = 0;
+    virtual list<ride> ::iterator chooseNextRideForCar(int carIdm,  State& state) = 0;
 };
 
 struct AvalibleChooser : public Chooser {
-    list<ride> ::const_iterator chooseNextRideForCar(int carIdm, const State& state) override;
+    list<ride> ::iterator chooseNextRideForCar(int carIdm,  State& state) override;
 };
 
 struct NearestChooser : public Chooser {
-    list<ride> ::const_iterator chooseNextRideForCar(int carIdm, const State& state);
+    list<ride> ::iterator chooseNextRideForCar(int carIdm,  State& state) override;
 };
 
 #endif //HASHCODE_CHOOSER_H
