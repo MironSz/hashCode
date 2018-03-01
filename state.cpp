@@ -5,6 +5,7 @@
 #include <vector>
 #include <set>
 #include <list>
+#include <math>
 
 using namespace std;
 using position = pair<int,int>;
@@ -21,11 +22,15 @@ struct ride {
     bool isTaken();
 };
 
+int dist(position a, position b){
+    return abs(a.first - b.first) + abs(a.second - b.second);
+}
+
 vector<vector<pair<int,kwant>>> allFinishedRides; //id drogi, czas rozpoczęcia
 vector<ride> allRides;   //wszystkie możliwe trasy
 vector<position> rideEndCord;  //gdzie samochód skończy
 vector<kwant> rideEndTime; //kiedy samochód skończy
-set<pair<kwant,int>> nextEndedRide;  //która samochód nastepny się skończy następna
+set<pair<kwant,int>> nextEndedRide;  //który samochód skończy jako następny
 
 class Chooser{
     int chooseNextRideForCar(int carId){
