@@ -41,7 +41,7 @@ list<ride>::iterator ClosestChooser::chooseNextRideForCar(int carIdm, State& sta
     for (auto potentialRide = state.allRides.begin(); potentialRide != state.allRides.end(); potentialRide++) {
         int d = dist(state.rideEndCord[carIdm], potentialRide->starting_point);//ile zajmie dojazd
         int r = dist(potentialRide->finishing_point, potentialRide->starting_point);//ile zajmie trasa
-        if(d + r +state.currentTime <= potentialRide->latest_finish) {
+        if(d + r + state.currentTime <= potentialRide->latest_finish) {
             if(d+state.currentTime <= potentialRide->earliest_start)
                 bonus = true;
 
