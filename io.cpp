@@ -11,7 +11,6 @@ parameters readParameters() {
 
 std::list<ride> readRides(long long N) {
     list<ride> rides;
-    for(int i=0; i<N; ++i) {
         ride n;
         for (int i = 0; i < N; ++i) {
             cin >> n.starting_point.first
@@ -23,7 +22,6 @@ std::list<ride> readRides(long long N) {
             n.number = i;
         }
         rides.push_back(n);
-    }
     return rides;
 }
 

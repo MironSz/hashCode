@@ -26,6 +26,15 @@ struct State {
         params = readParameters();
         allRides = readRides(params.N);
         completedRidesByCars.resize(params.F);
+
+        allFinishedRides.resize(params.N+1);
+        for(int i=0; i <params.F ;i++){ //inicjajcja
+            rideEndCord.push_back(std::make_pair(0,0));
+            rideEndTime.push_back(0);
+            nextEndedRide.insert(std::make_pair(0,i));
+        }
+        currentTime = 0;
+
     }
 
     void printOutput() {
