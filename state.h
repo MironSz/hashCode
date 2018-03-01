@@ -13,18 +13,32 @@
 #include "io.h"
 
 struct State {
-    std::vector<std::vector<std::pair<int,kwant>>> allFinishedRides; //id drogi, czas rozpoczęcia
+    std::vector<std::vector<std::pair<int,kwant>>> allFinishedRides; //id auta, id drogi
     std::list<ride> allRides;   //wszystkie możliwe trasy
     std::vector<position> rideEndCord;  //gdzie samochód skończy
     std::vector<kwant> rideEndTime; //kiedy samochód skończy
     std::set<std::pair<kwant,int>> nextEndedRide;  //która samochód nastepny się skończy następna
+    std::vector<std::vector<int>> completedRidesByCars;
     parameters params;
     kwant currentTime;
 
     explicit State() {
         params = readParameters();
         allRides = readRides(params.N);
+        completedRidesByCars.resize(params.F);
     }
+
+    void printOutput() {
+        for(auto a: completedRidesByCars) {
+            std::cout<<a.size()<<" ";
+            for(auto r: a) {
+                std::cout<<r<<" ";
+            }
+            std::cout<<"\n";
+        }
+    }
+
+
 };
 
 int dist(position a, position b);

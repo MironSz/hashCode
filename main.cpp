@@ -2,11 +2,10 @@
 #include <vector>
 #include "structs.h"
 #include "io.h"
-
+#include "MironSolution.h"
 using namespace std;
 
 int main() {
-    ride Ride;
-    std::cout << "Hello, Miron!" << std::endl;
+    f();
     return 0;
 }

@@ -15,7 +15,7 @@ struct Chooser{
 };
 
 struct AvalibleChooser : public Chooser {
-    list<ride> ::const_iterator chooseNextRideForCar(int carIdm, const State& state);
+    list<ride> ::const_iterator chooseNextRideForCar(int carIdm, const State& state) override;
 };
 
 struct NearestChooser : public Chooser {
