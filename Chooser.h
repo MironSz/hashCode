@@ -22,4 +22,5 @@ struct NearestChooser : public Chooser {
     list<ride> ::iterator chooseNextRideForCar(int carIdm,  State& state) override;
 };
 
+
 #endif //HASHCODE_CHOOSER_H

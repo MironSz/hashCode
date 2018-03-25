@@ -1,7 +1,5 @@
 #include <iostream>
 #include <vector>
-#include "structs.h"
-#include "io.h"
 #include "MironSolution.h"
 using namespace std;
 

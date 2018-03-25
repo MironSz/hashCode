@@ -11,6 +11,7 @@
 #include <list>
 #include "structs.h"
 #include "io.h"
+#include <algorithm>
 
 struct State {
     std::vector<std::vector<std::pair<int,kwant>>> allFinishedRides; //id auta, id drogi
@@ -22,11 +23,10 @@ struct State {
     parameters params;
     kwant currentTime;
 
-    explicit State() {
-        params = readParameters();
+    explicit State() : params(readParameters()) {
         allRides = readRides(params.N);
         completedRidesByCars.resize(params.F);
-
+        allRides.sort(cccomp);
         allFinishedRides.resize(params.N+1);
         for(int i=0; i <params.F ;i++){ //inicjajcja
             rideEndCord.push_back(std::make_pair(0,0));

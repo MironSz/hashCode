@@ -11,7 +11,6 @@ void f(){
     AvalibleChooser chooser;
     State state;
 
-
     while(state.nextEndedRide.begin()->first < state.params.T && state.nextEndedRide.empty() == false){
         auto endedRide = *state.nextEndedRide.begin();
         position currentPosition = state.rideEndCord[endedRide.second];
